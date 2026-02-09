@@ -63,8 +63,43 @@
                             <input type="submit" name="save" value="Save" class="btn btn-primary">
                 </form>
          </div>
+<div class="card mt-4">
+    <div class="card-header">
+        <h3 class="text-primary">Products</h3>
+    </div>
+    <div class="card-body">
+        <table class="table table-bordered table-striped">
+            <thead>
+                <tr>
+                    <th>Product Code</th>
+                    <th>Product Name</th>
+                    <th>Quantity</th>
+                    <th>Buying Price(Ksh)</th>
+                    <th>Selling Price(Ksh)</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <?php
+                $products=mysqli_query($dbcon,"SELECT * FROM products");
+                while($row=mysqli_fetch_array($products)){
+                    echo'<tr>
+                    <td>'.$row['product_code'].'</td>
+                    <td>'.$row['product_name'].'</td>
+                    <td>'.$row['quantity'].'</td>
+                    <td>'.$row['buying_price'].'</td>
+                    <td>'.$row['selling_price'].'</td>
+                    <td></td>
+                    </tr>';                                                                                     
+                }
+                ?>
+            </tbody>
+        </table>
+    </body>
+    </body>
 </div>
-    
 
+
+</div>
 </body>
 </html>
