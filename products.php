@@ -34,8 +34,6 @@
            }
            ?>
 
-
-
          </div>
          <div class="card-body">
              <form method="post">
@@ -81,8 +79,8 @@
             </thead>
             <tbody>
                 <?php
-                $products=mysqli_query($dbcon,"SELECT * FROM products");
-                while($row=mysqli_fetch_array($products)){
+                $products = mysqli_query($dbcon,"SELECT * FROM products");
+                while($row = mysqli_fetch_array($products)){
                     echo'<tr>
                     <td>'.$row['product_code'].'</td>
                     <td>'.$row['product_name'].'</td>

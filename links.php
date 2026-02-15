@@ -12,6 +12,9 @@
         <a class="nav-link" href="sale.php">Sale</a>
       </li>
       <li class="nav-item">
+        <a class="nav-link" href="user.php">Users</a>
+      </li>
+      <li class="nav-item">
         <a class="nav-link" href="login.php">Login</a>
       </li>
     </ul>
