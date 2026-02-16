@@ -20,8 +20,8 @@
                     <div class="card-body">
                         <?php
                         if(isset($_POST['save_user'])){
-                            $username =$_POST['username'];
-                            $password =$_POST['password'];
+                            $username =htmlspecialchars($_POST['username'],ENT_QUOTES);
+                            $password =sha1($_POST['password']);
                             $role =$_POST['role'];
 
                             $query = mysqli_query($dbcon, "INSERT INTO users (username, password, role) VALUES ('$username', '$password', '$role')");
@@ -47,6 +47,7 @@
                                 <select name="role" class="form-control">
                                     <option value="Admin">Admin</option>
                                     <option value="Cashier">Cashier</option>
+                                    <option value="User">User</option>
                                 </select>
                             </div>
                             <div class="d-grid">
@@ -68,7 +69,6 @@
                                 <tr>
                                     <th>Username</th>
                                     <th>Role</th>
-                                    <th>Action</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -78,7 +78,6 @@
                                     echo '<tr>
                                     <td>'.$row['username'].'</td>
                                     <td>'.$row['role'].'</td>
-                                    <td><button class="btn btn-sm btn-danger">Delete</button></td>
                                     </tr>';
                                 }
                                 ?>

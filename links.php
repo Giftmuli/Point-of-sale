@@ -14,9 +14,27 @@
       <li class="nav-item">
         <a class="nav-link" href="user.php">Users</a>
       </li>
-      <li class="nav-item">
-        <a class="nav-link" href="login.php">Login</a>
-      </li>
+
+      <?php
+      if (isset($_SESSION['username'])) {
+          echo '
+               <li class="nav-item">
+                <a class="nav-link" href="#">Hello,'.$_SESSION['username'].'</a>
+              </li>;
+          
+          
+              <li class="nav-item">
+                <a class="nav-link" href="logout.php">Log out</a>
+              </li>';
+      }
+      
+      else {
+          echo '<li class="nav-item">
+                <a class="nav-link" href="login.php">Login</a>
+              </li>';
+      }
+      ?>
+
     </ul>
   </div>
 </nav>
